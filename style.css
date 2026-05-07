@@ -1,0 +1,696 @@
+/* Colores principales de SoluTech y pequeños ajustes visuales reutilizables */
+:root {
+    --navy: #062b4f;
+    --navy-strong: #031d36;
+    --blue: #09aeea;
+    --blue-soft: #dff5ff;
+    --white: #ffffff;
+    --ink: #132236;
+    --muted: #607083;
+    --line: #d8e5ef;
+    --surface: #f6fbff;
+    --success: #18a999;
+    --shadow: 0 18px 42px rgba(6, 43, 79, 0.12);
+    --radius: 8px;
+}
+
+/* Base sencilla para que la página se vea limpia */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    color: var(--ink);
+    background: var(--white);
+    font-family: "Segoe UI", Roboto, Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container {
+    width: min(1120px, calc(100% - 32px));
+    margin: 0 auto;
+}
+
+/* Cabecera con los datos de contacto y el menú principal */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.96);
+    border-bottom: 1px solid rgba(216, 229, 239, 0.8);
+    box-shadow: 0 8px 28px rgba(6, 43, 79, 0.06);
+}
+
+.topbar {
+    color: var(--white);
+    background: linear-gradient(90deg, var(--navy-strong), var(--navy));
+    font-size: 0.84rem;
+}
+
+.topbar-grid {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 18px;
+    justify-content: space-between;
+    padding: 8px 0;
+}
+
+.header-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 14px 0;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 190px;
+}
+
+.brand-logo {
+    width: 82px;
+    height: 58px;
+    object-fit: contain;
+    padding: 4px;
+    background: var(--white);
+    border: 2px solid var(--blue-soft);
+    border-radius: var(--radius);
+    box-shadow: 0 8px 18px rgba(6, 43, 79, 0.16);
+}
+
+.brand-name {
+    color: var(--navy);
+    font-size: 1.55rem;
+    font-weight: 800;
+    letter-spacing: 0;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.main-nav a {
+    position: relative;
+    padding: 10px 13px;
+    color: var(--navy);
+    border-radius: var(--radius);
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: color 0.25s ease, background 0.25s ease, transform 0.25s ease;
+}
+
+.main-nav a:hover,
+.main-nav a:focus-visible {
+    color: var(--blue);
+    background: var(--blue-soft);
+    transform: translateY(-2px);
+}
+
+.main-nav .nav-cta {
+    color: var(--white);
+    background: linear-gradient(135deg, var(--navy), var(--blue));
+    box-shadow: 0 10px 22px rgba(9, 174, 234, 0.25);
+}
+
+.main-nav .nav-cta:hover,
+.main-nav .nav-cta:focus-visible {
+    color: var(--white);
+    background: linear-gradient(135deg, var(--blue), var(--navy));
+}
+
+/* Primera sección: mensaje principal y presentación visual de la empresa */
+.hero {
+    overflow: hidden;
+    background:
+        linear-gradient(135deg, rgba(6, 43, 79, 0.95), rgba(9, 174, 234, 0.88)),
+        linear-gradient(180deg, var(--white), var(--blue-soft));
+    color: var(--white);
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.12fr) minmax(280px, 0.88fr);
+    align-items: center;
+    gap: 48px;
+    min-height: 650px;
+    padding: 70px 0;
+}
+
+.hero-content {
+    animation: fadeUp 0.75s ease both;
+}
+
+.eyebrow {
+    margin: 0 0 12px;
+    color: var(--blue);
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0;
+    text-transform: uppercase;
+}
+
+.hero .eyebrow {
+    color: #c9f4ff;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin-top: 0;
+}
+
+h1 {
+    max-width: 760px;
+    margin-bottom: 20px;
+    font-size: clamp(2.25rem, 6vw, 4.75rem);
+    line-height: 1.02;
+    letter-spacing: 0;
+}
+
+h2 {
+    color: var(--navy);
+    margin-bottom: 16px;
+    font-size: clamp(1.75rem, 4vw, 2.8rem);
+    line-height: 1.12;
+    letter-spacing: 0;
+}
+
+h3 {
+    color: var(--navy);
+    margin-bottom: 10px;
+    font-size: 1.25rem;
+}
+
+.hero-text {
+    max-width: 650px;
+    margin-bottom: 30px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.12rem;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 13px 22px;
+    border: 0;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font: inherit;
+    font-weight: 800;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.btn:hover,
+.btn:focus-visible {
+    transform: translateY(-3px);
+}
+
+.btn-primary {
+    color: var(--white);
+    background: linear-gradient(135deg, var(--blue), #0b86d1);
+    box-shadow: 0 14px 28px rgba(9, 174, 234, 0.32);
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+    box-shadow: 0 18px 34px rgba(9, 174, 234, 0.42);
+}
+
+.btn-secondary {
+    color: var(--white);
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.hero-panel {
+    display: grid;
+    gap: 20px;
+    align-content: center;
+    padding: 28px;
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: var(--radius);
+    box-shadow: 0 24px 60px rgba(3, 29, 54, 0.25);
+    animation: fadeUp 0.9s ease 0.12s both;
+}
+
+.hero-logo {
+    width: 100%;
+    max-height: 360px;
+    object-fit: contain;
+    border-radius: var(--radius);
+    background: var(--white);
+}
+
+.service-list {
+    display: grid;
+    gap: 10px;
+}
+
+.service-list span {
+    padding: 12px 14px;
+    color: var(--navy);
+    background: linear-gradient(90deg, var(--blue-soft), var(--white));
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    font-weight: 800;
+}
+
+/* Espaciados y estilos compartidos entre secciones */
+.section {
+    padding: 82px 0;
+}
+
+.section-soft {
+    background:
+        linear-gradient(180deg, var(--surface), var(--white));
+}
+
+.section-heading {
+    max-width: 720px;
+    margin-bottom: 34px;
+}
+
+.section-heading p:not(.eyebrow),
+.about-copy,
+.contact-section p {
+    color: var(--muted);
+}
+
+/* Formulario de incidencias, pensado para que sea claro y cómodo de rellenar */
+.incident-form {
+    padding: 30px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+fieldset {
+    margin: 0 0 26px;
+    padding: 0 0 24px;
+    border: 0;
+    border-bottom: 1px solid var(--line);
+}
+
+fieldset:last-of-type {
+    margin-bottom: 24px;
+}
+
+legend {
+    margin-bottom: 18px;
+    color: var(--navy);
+    font-size: 1.15rem;
+    font-weight: 800;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.form-grid-wide {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+label {
+    display: grid;
+    gap: 8px;
+    color: var(--navy);
+    font-weight: 800;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    min-height: 46px;
+    padding: 12px 14px;
+    color: var(--ink);
+    background: #fbfdff;
+    border: 1px solid #c9d9e6;
+    border-radius: var(--radius);
+    font: inherit;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+textarea {
+    resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 0;
+    background: var(--white);
+    border-color: var(--blue);
+    box-shadow: 0 0 0 4px rgba(9, 174, 234, 0.15);
+}
+
+.option-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.option-grid label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 50px;
+    padding: 12px 14px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: border-color 0.25s ease, transform 0.25s ease, background 0.25s ease;
+}
+
+.option-grid label:hover {
+    background: var(--blue-soft);
+    border-color: rgba(9, 174, 234, 0.55);
+    transform: translateY(-2px);
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    width: 18px;
+    min-height: 18px;
+    accent-color: var(--blue);
+}
+
+.form-submit {
+    width: min(100%, 260px);
+}
+
+/* Bloque de presentación de la empresa */
+.about-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 42px;
+    align-items: start;
+}
+
+.about-copy {
+    display: grid;
+    gap: 14px;
+    font-size: 1.05rem;
+}
+
+/* Tarjetas de tarifas con un aspecto más comercial y fácil de comparar */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.price-card {
+    display: grid;
+    align-content: space-between;
+    min-height: 250px;
+    padding: 24px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: 0 12px 26px rgba(6, 43, 79, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.price-card:hover {
+    transform: translateY(-7px);
+    border-color: rgba(9, 174, 234, 0.5);
+    box-shadow: 0 22px 42px rgba(6, 43, 79, 0.14);
+}
+
+.price-card p {
+    color: var(--muted);
+}
+
+.price-card strong {
+    display: block;
+    margin-top: 24px;
+    color: var(--blue);
+    font-size: 1.65rem;
+}
+
+.price-card.featured {
+    background: linear-gradient(180deg, var(--navy), var(--navy-strong));
+    border-color: var(--navy);
+}
+
+.price-card.featured h3,
+.price-card.featured p {
+    color: var(--white);
+}
+
+.price-card.featured strong {
+    color: #72e4ff;
+}
+
+/* Zona de contacto con contraste para destacar la información importante */
+.contact-section {
+    color: var(--white);
+    background: linear-gradient(135deg, var(--navy-strong), var(--navy) 58%, #087dbd);
+}
+
+.contact-section h2,
+.contact-section .eyebrow,
+.contact-section p {
+    color: var(--white);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: center;
+}
+
+.contact-box {
+    padding: 26px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: var(--radius);
+}
+
+.contact-box p:last-child {
+    margin-bottom: 0;
+}
+
+/* Pie de página con redes, horario y enlaces legales */
+.site-footer {
+    color: #d9e8f2;
+    background: #031d36;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.35fr 1fr 1fr 1fr;
+    gap: 28px;
+    padding: 44px 0;
+}
+
+.site-footer h2,
+.site-footer h3 {
+    color: var(--white);
+    margin-bottom: 12px;
+}
+
+.site-footer a {
+    display: block;
+    width: fit-content;
+    margin-bottom: 8px;
+    color: #d9e8f2;
+    transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.site-footer a:hover,
+.site-footer a:focus-visible {
+    color: var(--blue);
+    transform: translateX(3px);
+}
+
+.social-links {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.social-links a {
+    padding: 8px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius);
+}
+
+.footer-bottom {
+    padding: 16px;
+    color: var(--white);
+    text-align: center;
+    background: #021426;
+    font-weight: 800;
+}
+
+/* Animaciones suaves para dar sensación de fluidez sin molestar */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
+
+/* Ajustes para tabletas y pantallas medianas */
+@media (max-width: 980px) {
+    .topbar-grid,
+    .pricing-grid,
+    .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .header-main {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .main-nav {
+        justify-content: flex-start;
+    }
+
+    .hero-grid,
+    .about-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-grid {
+        min-height: auto;
+        padding: 54px 0;
+    }
+
+    .form-grid,
+    .form-grid-wide,
+    .option-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Ajustes para móviles, priorizando lectura y botones cómodos */
+@media (max-width: 640px) {
+    .container {
+        width: min(100% - 24px, 1120px);
+    }
+
+    .topbar-grid,
+    .form-grid,
+    .form-grid-wide,
+    .option-grid,
+    .pricing-grid,
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .topbar {
+        display: none;
+    }
+
+    .brand-logo {
+        width: 72px;
+        height: 52px;
+    }
+
+    .brand-name {
+        font-size: 1.35rem;
+    }
+
+    .main-nav {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .main-nav a {
+        width: 100%;
+        padding: 11px 12px;
+        background: var(--surface);
+    }
+
+    .main-nav .nav-cta {
+        text-align: center;
+    }
+
+    .hero-grid {
+        gap: 30px;
+        padding: 44px 0;
+    }
+
+    .hero-actions {
+        display: grid;
+    }
+
+    .btn,
+    .form-submit {
+        width: 100%;
+    }
+
+    .hero-panel,
+    .incident-form,
+    .contact-box {
+        padding: 20px;
+    }
+
+    .section {
+        padding: 58px 0;
+    }
+
+    .price-card {
+        min-height: 220px;
+    }
+}
